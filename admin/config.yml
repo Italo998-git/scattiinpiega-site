@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img"
+public_folder: "/img"
+
+collections:
+  - name: "days"
+    label: "Giorni"
+    folder: "content/days"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titolo Giorno", name: "title", widget: "string"}
+      - name: "timeblocks"
+        label: "Fasce Orarie"
+        widget: "list"
+        fields:
+          - {label: "Titolo Fascia Oraria", name: "title", widget: "string"}
+          - name: "photos"
+            label: "Foto"
+            widget: "list"
+            fields:
+              - {label: "URL Foto", name: "url", widget: "image"}
+              - {label: "Alt Text", name: "alt", widget: "string", required: false}
